@@ -15,4 +15,5 @@ public interface UserClientService {
 
     @PostMapping("/user/add")
     int addUser(User user);
+
 }
