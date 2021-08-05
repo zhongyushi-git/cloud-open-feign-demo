@@ -1,0 +1,32 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consul-consumer
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+
+
+#设置feign 客户端超时时间
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ReadTimeout: 5000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000
+
+feign:
+  client:
+    config:
+      #指定全局的级别
+      default:
+        loggerLevel: full
+
+logging:
+  level:
+    com.zys.cloud.service.UserServiceClient: debug
+
