@@ -12,11 +12,11 @@ public class UserController {
 
     @GetMapping("/user/get")
     public String get() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         return "我是服务提供者，端口：" + port;
     }
 
