@@ -12,11 +12,11 @@ public class UserController {
 
     @GetMapping("/user/get")
     public String get() {
-//        try {
-//            Thread.sleep(2000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "我是服务提供者，端口：" + port;
     }
 
@@ -29,7 +29,6 @@ public class UserController {
     public String postParam(@RequestParam("username") String username) {
         return "我是服务提供者，参数：" + username + "，端口：" + port;
     }
-
     @PostMapping("/user/add")
     public String addUser(@RequestBody User user) {
         return "我是服务提供者，参数：" + user.toString() + "，端口：" + port;
